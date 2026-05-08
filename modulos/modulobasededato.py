@@ -65,6 +65,22 @@ def inicializar_tablas():
             tmb = 88.362 + (13.397 * peso) - (4.799 * altura) - (5.677 * edad)
         elif sexo.lower() == 'mujer':
             tmb = 447.593 - (9.247 * peso) - (3.098 * altura) + (4.330 * edad)
+    def calorias_con_actividad(tmb,actividad):
+    """
+    Calcula las calorias con actividad física.
+    """
+    if actividad == "sedent":
+        return tmb * 1.2
+    elif actividad == "ligero":
+        return tmb * 1.375
+    elif actividad == "medio":
+        return tmb * 1.55
+    elif actividad == "intenso":
+        return tmb * 1.725
+    elif actividad == "extrem":
+        return tmb * 1.9
+    else:
+        return tmb * actividad 
 
 
 # GUARDAR REGISTROS DE COMIDA
