@@ -30,7 +30,7 @@ def inicializar_tablas():
     )
     ''')
     
-    # Tabla para registrar el peso diario de Jacob
+    # Tabla para registrar el peso diario de usuario
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS progreso_usuario (
             fecha TEXT PRIMARY KEY,
