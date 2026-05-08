@@ -46,13 +46,9 @@ with c1:
     edad = st.number_input("EDAD:", 
                            min_value=1, value=27) # coloque 27 por defecto
  with c2:
-    altura = st.number _input("ALTURA
-                           (CM):",min_value=1, value=171) 
+    altura = st.number _input("ALTURA (CM):",min_value=1, value=171) 
         #lo coloque por defecto
 
-#peso y activadad en columnas 
-c3, c4 = st.columns(2)
-with c3: 
     
                            
         
