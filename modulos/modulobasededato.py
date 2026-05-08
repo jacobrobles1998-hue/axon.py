@@ -1,0 +1,69 @@
+import os
+import sqlite3
+import pandas as pd
+from datetime import datetime
+
+def conectar_db():
+    # Esto busca la carpeta donde está ESTE archivo y sube un nivel
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    ruta_data = os.path.join(base_dir, 'data')
+    
+    if not os.path.exists(ruta_data):
+        os.makedirs(ruta_data)
+        
+    archivo_db = os.path.join(ruta_data, 'axon_master.db')
+    return sqlite3.connect(archivo_db, check_same_thread=False)
+    return conn
+
+def inicializar_tablas():
+    conn = conectar_db()
+    cursor = conn.cursor()
+    # Tabla para registrar el perfil del usuario
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS perfil_usuario(
+    id INTEGER PRIMARY KEY,
+    peso_actual REAL,
+    altura REAL,
+    edad INTEGER,
+    sexo TEXT
+    tmb REAL
+    )
+    ''')
+    
+    # Tabla para registrar el peso diario de Jacob
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS progreso_usuario (
+            fecha TEXT PRIMARY KEY,
+            peso REAL,
+            musculo_estimado REAL
+        )
+    ''')
+    # Tabla para registrar lo que comes
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS registro_comidas (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            fecha TEXT,
+            alimento TEXT,
+            gramos REAL,
+            proteina REAL,
+            carbos REAL,
+            grasas REAL,
+            kcal REAL
+        )
+    ''')
+    conn.commit()
+    conn.close()
+
+    def calcular_tmb(peso, altura, edad, sexo):
+        if sexo == 'M':
+            return tmb()
+    return calcular_tmb
+    
+    def calcular_tmbp(peso, altura, edad, sexo):
+        # formila de harris-benedict revisada
+        if sexo.lower() == 'hombre':
+            tmb = 88.362 + (13.397 * peso) - (4.799 * altura) - (5.677 * edad)
+        elif sexo.lower() == 'mujer':
+            tmb = 447.593 - (9.247 * peso) - (3.098 * altura) + (4.330 * edad)
+
+
