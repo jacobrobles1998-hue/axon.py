@@ -16,7 +16,7 @@ aplicar_estilos_axon()
 # 4. El Menú (Lo que tú ves)
 selected = option_menu(
     menu_title=None,
-    options=["Dashboard", "Nutrición", "Entrenamiento"],
+    options=["Dashboard", "Nutrición", "configuración"],
     icons=["house", "egg-fried", "activity"],
     orientation="horizontal"
 )
