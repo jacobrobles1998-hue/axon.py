@@ -10,6 +10,20 @@ def mostrar_nutricion():
     peso = st.number_input("Gramos", value=100)
     cocido = st.checkbox("¿Está cocido?")
     
-    if st.button("Calcular"):
-        res = calcular_macros(alimento, peso, es_cocido=cocido)
-        st.success(f"Resultado: {res['proteina']}g Proteína | {res['kcal']} Kcal")
+    if st.button("Calcular y guardar"):
+        # 1. realizar el calculo con ña funcion que ya vimos
+        res = calcular_macros (alimento, peso, es_cocido_=cocido)
+        
+        # 2. guardar automáticamente en la base de datos 
+        exito =
+        guardar_registro_comida(alimento, res['proteina'] res['kcal'])
+
+    if exito:
+        st.success(f"✅ registrado:
+        {alimentos}, {res['proteina']}g p | {res['kcal']} kcal)") 
+        st.info("los datos se han guardado en ru historial diario axon. ")
+    else:
+        st.error("hubo un problema al guardar el registro")
+        
+                      
+  
