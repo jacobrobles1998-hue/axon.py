@@ -34,6 +34,30 @@ mostrar_nutricion() o poner codigo directo
 st.title(" 🍎 registro de nutrición")
 
 elif selected == "configuración"
+# 1. BLOQUE DE DATOS METABOLICO (LO QUE VA A APARECER DE PRIMERO)
+st.subheader("datos del usuario y tasa metabolica")
+# campo de texto para el nombre 
+usuario = st.text_input("SUJETO:" , placeholder="EJ: USUARIO 1")
+#seleccion de sexo
+sexo = st.radio.("SEXO:", ["MASCULINO" , "FEMENINO"], horizontal=true)
+#edad y altura en columnas 
+c1, c2 = st.columns(2)
+with c1:
+    edad = st.number_input("EDAD:", 
+                           min_value=1, value=27) # coloque 27 por defecto
+ with c2:
+    altura = st.number _input("ALTURA
+                           (CM):",min_value=1, value=171) 
+        #lo coloque por defecto
+
+#peso y activadad en columnas 
+c3, c4 = st.columns(2)
+with c3: 
+    
+                           
+        
+                                
+    
 # TODO ESTO VA DIRECTO A LA APP.PY
 st.title("configuración") 
     st.subheader("ajustes del ciclo Diario")
