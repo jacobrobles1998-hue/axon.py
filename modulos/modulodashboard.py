@@ -21,12 +21,12 @@ st.title("configuración")
     st.subheader("ajustes del ciclo Diario")
 hora_despertar = st.time_input("¿a que hora te levantaste de la cama hoy?")
 
-if hora de despertar :
-     st.success(f"configuracion guardada para las {hora_desptertar.strftime('%H:
-     %M')}")
+if hora de despertar:
+    st.success(f"configuracion guardada para las {hora_desptertar.strftime('%H:
+    %M')}")
 
-         st.divider()
-         st.write("aqui podrás ajustar tus metas de volumen mas adelante.")
+        st.divider()
+        st.write("aqui podrás ajustar tus metas de volumen mas adelante.")
                                                                                              
     # Ejemplo de métricas rápidas
     col1, col2, col3 = st.columns(3)
