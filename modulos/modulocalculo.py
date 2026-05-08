@@ -135,4 +135,6 @@ def calorias_con_actividad(tmb,actividad):
         return tmb * 1.9
     else:
         return tmb * actividad 
+
+# para saber que quiere el usuario ( superavit, defitic, mantenimiento)
         
