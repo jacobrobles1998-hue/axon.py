@@ -67,7 +67,7 @@ def inicializar_tablas():
             tmb = 447.593 - (9.247 * peso) - (3.098 * altura) + (4.330 * edad)
 
 
-
+# GUARDAR REGISTROS DE COMIDA
 
 def guardar_registro_comida(alimento, 
                             gramos, proteina, carbohidrstos, grasas, kcal)
@@ -79,7 +79,7 @@ try:
 
     cursor.execute('''
     INSERT INTO registro_comidas
-    (fecha, alimento, gramos' proteina, carbos, grasas, kcal)
+    (fecha, alimento, gramos, proteina, carbos, grasas, kcal)
     VALUES (?, ?, ?, ?, ?, ?, ?)
     ''', (fecha_actual, alimento, gramos, proteia, carbos, grasas, kcal))
     conn.commit()
