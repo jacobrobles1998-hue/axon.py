@@ -21,9 +21,6 @@ selected = option_menu(
     orientation="horizontal"
     )
 
-# 5. ¿Qué mostrar según el botón?
-if selected == "Dashboard":
-    mostrar_dashboard()
     
 # 1. CONFIGURACION BOTONES APP
 #¿que mostrar según el botón?
