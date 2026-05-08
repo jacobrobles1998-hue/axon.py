@@ -67,3 +67,24 @@ def inicializar_tablas():
             tmb = 447.593 - (9.247 * peso) - (3.098 * altura) + (4.330 * edad)
 
 
+
+
+def guardar_registro_comida(alimento, 
+                            gramos, proteina, carbohidrstos, grasas, kcal)
+try:
+    conn = conectar_db() 
+    cursor = conn.cursor ()
+    fecha_actual = 
+    datetime.now().strfime("%Y-%m-%d-%H:-%M:%S")
+
+    cursor.execute('''
+    INSERT INTO registro_comidas
+    (fecha, alimento, gramos' proteina, carbos, grasas, kcal)
+    VALUES (?, ?, ?, ?, ?, ?, ?)
+    ''', (fecha_actual, alimento, gramos, proteia, carbos, grasas, kcal))
+    conn.commit()
+    conn.close()
+    return true
+except exception as e:
+    print(f" error al guardar: {e}")
+    return false 
